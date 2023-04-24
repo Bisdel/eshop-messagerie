@@ -1,10 +1,12 @@
-package src.main.java.fr.formation;
+package fr.formation;
 
 /**
  * Hello world!
  *
  */
-public class App  
+
+public class Application
+
 {
     public static void main( String[] args )
     {
