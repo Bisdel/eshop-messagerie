@@ -39,6 +39,7 @@ public class ApplicationUtilisateur {
 			case 03:listerMsgSalon();break;
 			case 04:envoyerMsgSalon();break;
 			}
+			
 		} while (choixMenu != 0);
 		Saisie.sc.close();
 	}
@@ -84,7 +85,7 @@ public class ApplicationUtilisateur {
 			System.out.println("Le salon existe pas.");
 			return;
 		}
-		 message = repoSalon.save(salon);
+		 message = repoSalon.save(message);
 		
 		
 		//>> ajouter au salon le message + utilisateur

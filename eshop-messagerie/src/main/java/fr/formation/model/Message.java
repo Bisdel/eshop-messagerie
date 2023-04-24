@@ -3,12 +3,27 @@ package fr.formation.model;
 
 import java.time.LocalDateTime;
 
-public class Message {
+import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+
+@Entity
+@Table(name = " message " )
+public class Message {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY) 
+@Column(name = "msg_id")
     private int id;
 
+@Column(name = "msg_date")
     private LocalDateTime date;
 
+@Column(name = "msg_contenue")
     private String contenu;
 
     public int getId() {
