@@ -1,5 +1,6 @@
 package fr.formation;
 
+import java.util.Optional;
 import java.util.Scanner;
 
 import fr.formation.factory.RepositoryFactory;
@@ -72,12 +73,22 @@ public class ApplicationUtilisateur {
 	private static void envoyerMsgSalon() {
 		IMessageRepository repoMessage =RepositoryFactory.createMessageRepository();
 		Message message = new Message();
-		int id =Saisie.nextInt(" Veuillez choisir L'id du salon ");
+		int idSalon =Saisie.nextInt(" Veuillez choisir L'id du salon ");
 		message.setContenu(Saisie.next(" le contenu de votre message : "));
+		
 		ISalonRepository repoSalon =RepositoryFactory.createSalonRepository();
-		System.out.println(repoSalon.findById(id));
-		// Verifier si le salon existe
-		//puis ajouter au salon le message et son utilisateur 
+		System.out.println(repoSalon.findById(idSalon ));
+		
+		Optional<Salon> optSalon = repoSalon.findById(idSalon);
+		if (optSalon.isEmpty()) {
+			System.out.println("Le salon existe pas.");
+			return;
+		}
+		 message = repoSalon.save(salon);
+		
+		
+		//>> ajouter au salon le message + utilisateur
+		
 		
 		
 		
