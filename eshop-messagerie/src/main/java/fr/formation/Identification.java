@@ -12,7 +12,7 @@ public class Identification {
         IUtilisateurRepository repoUtilisateur = RepositoryFactory.createUtilisateurRepository();
 
         System.out.println("Veuillez entrer votre nom d'utilisateur :");        
-        user.setUsername(Application.sc.nextLine());
+        user.setUsername(ApplicationUtilisateur.sc.nextLine());
 
         for (Utilisateur u : repoUtilisateur.findAll()){
             if (user.getUsername() == u.getUsername()){
@@ -24,7 +24,7 @@ public class Identification {
         return Optional.empty();
     }
 
-    public static Optional<Utilisateur> checkPassword() {
+    public static Optional<Utilisateur> checkPassword(Utilisateur user) {
         return null;
     }
 }

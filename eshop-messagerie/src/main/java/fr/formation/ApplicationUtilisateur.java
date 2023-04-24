@@ -1,35 +1,45 @@
 package fr.formation;
 
+import java.util.Scanner;
+
 import fr.formation.factory.RepositoryFactory;
 import fr.formation.model.Message;
 import fr.formation.model.Salon;
+import fr.formation.model.Utilisateur;
 import fr.formation.repo.IMessageRepository;
 import fr.formation.repo.ISalonRepository;
-import fr.formation.repo.jpa.SalonRepositoryJpa;
 
 
 
 public class ApplicationUtilisateur {
 
+	static Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
+
+		System.out.println("Bienvenue sur EMessagerie, le service de messagerie de votre EShop préféré !");
+        Utilisateur utilisateur = new Utilisateur();
+
+		if(Identification.checkUsername(utilisateur).isPresent()){
+            if (Identification.checkPassword(utilisateur).isPresent()){
+                System.out.println("Bienvenue "+utilisateur.getUsername()+" !");
+            }
+        }
+        else {
+            Inscription.sInscrire(utilisateur);
+        }
 
 		int choixMenu = 0;
 
 		do {
 			choixMenu = Menu.print();
 			switch (choixMenu) {
-			case 01:seConnecter();break;
-			case 02:crerSalon();break;
-			case 03:listerSalon();break;
-			case 04:listerMsgSalon();break;
-			case 05:envoyerMsgSalon();break;
+			case 01:crerSalon();break;
+			case 02:listerSalon();break;
+			case 03:listerMsgSalon();break;
+			case 04:envoyerMsgSalon();break;
 			}
 		} while (choixMenu != 0);
 		Saisie.sc.close();
-	}
-
-	private static void seConnecter() {
-			
 	}
 
 	private static void crerSalon() {
