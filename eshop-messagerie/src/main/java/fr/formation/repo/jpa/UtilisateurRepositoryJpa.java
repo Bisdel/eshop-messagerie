@@ -9,12 +9,14 @@ import jakarta.persistence.EntityManager;
 
 public class UtilisateurRepositoryJpa extends AbstractRepositoryJpa implements IUtilisateurRepository {
 
-	@Override
 	public List<Utilisateur> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+		try (EntityManager em = emf.createEntityManager()) {
+            return em
+            .createQuery("select u from Utilisateur u", Utilisateur.class)
+            .getResultList();
+        }
+    }
+	
 	@Override
 	public Optional<Utilisateur> findById(int id) {
 		// TODO Auto-generated method stub
@@ -32,12 +34,4 @@ public class UtilisateurRepositoryJpa extends AbstractRepositoryJpa implements I
 		// TODO Auto-generated method stub
 		
 	}
-    
-    public List<Utilisateur> findAll() {
-		try (EntityManager em = emf.createEntityManager()) {
-            return em
-            .createQuery("select u from Utilisateur u", Utilisateur.class)
-            .getResultList();
-        }
-    }
 }
