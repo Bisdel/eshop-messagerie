@@ -10,4 +10,4 @@ Fonctionnalités à implémenter :
 - Lire les messages du salon (idéalement, les 10 derniers uniquement)
 - Envoyer un nouveau message sur un salon
 
-[Enoncé :](/EXO.png)
+![Enoncé :](/EXO.png)
