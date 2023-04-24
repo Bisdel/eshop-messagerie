@@ -1,6 +1,7 @@
 # eshop-messagerie
 
 Appli de messagerie instantanée
+
 Fonctionnalités à implémenter :
 - Inscription
 - Se connecter
