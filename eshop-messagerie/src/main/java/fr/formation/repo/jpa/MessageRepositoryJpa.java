@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import fr.formation.model.Message;
-import fr.formation.model.Salon;
 import fr.formation.repo.IMessageRepository;
 import jakarta.persistence.EntityManager;
 
