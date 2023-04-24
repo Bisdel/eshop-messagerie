@@ -1,15 +1,13 @@
 package fr.formation;
 
-/**
- * Hello world!
- *
- */
+import java.util.Scanner;
 
-public class Application
+public class Application {
 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    static Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) {
+        
+        System.out.println("Bienvenue sur EMessagerie, le service de messagerie de votre EShop préféré !");
+        Identification();
     }
 }
