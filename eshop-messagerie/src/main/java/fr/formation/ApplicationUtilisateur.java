@@ -67,12 +67,15 @@ public class ApplicationUtilisateur {
 		 for(Message m : repoMessage.findAll()) {
 			 System.out.println(m.getId() + "- " + m.getDate() + " " + " " + m.getContenu() );
 		 }
-		
-			
 	}
 
 	private static void envoyerMsgSalon() {
-			
+		IMessageRepository repoMessage =RepositoryFactory.createMessageRepository();
+		Message message = new Message();
+		message.setContenu(Saisie.next(" le contenu de votre message : "));
+		
+		
+		
 	}
 
 }

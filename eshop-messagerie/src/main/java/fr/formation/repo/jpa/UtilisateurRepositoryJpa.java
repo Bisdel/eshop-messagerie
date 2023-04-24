@@ -25,8 +25,35 @@ public class UtilisateurRepositoryJpa extends AbstractRepositoryJpa implements I
 
 	@Override
 	public Utilisateur save(Utilisateur entity) {
-		// TODO Auto-generated method stub
-		return null;
+	
+		try (EntityManager em = emf.createEntityManager()) {
+			em.getTransaction().begin();
+
+			try {
+				if (entity.getId() == 0) {
+					em.persist(entity);
+				}
+
+				else {
+					entity = em.merge(entity);
+				}
+
+				em.getTransaction().commit();
+			}
+
+			catch (Exception ex) {
+				ex.printStackTrace();
+				em.getTransaction().rollback();
+			}
+		}
+
+		catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+		return entity;
+		
+	
 	}
 
 	@Override
