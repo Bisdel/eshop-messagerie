@@ -1,5 +1,7 @@
 package fr.formation.repo.jpa;
 
-public class SalonRepositoryJpa {
+import fr.formation.repo.ISalonRepository;
+
+public class SalonRepositoryJpa extends AbstractRepositoryJpa implements ISalonRepository {
     
 }

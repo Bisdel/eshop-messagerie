@@ -1,5 +1,7 @@
 package fr.formation.repo.jpa;
 
-public class MessageRepositoryJpa {
+import fr.formation.repo.IMessageRepository;
+
+public class MessageRepositoryJpa extends AbstractRepositoryJpa implements IMessageRepository {
     
 }
