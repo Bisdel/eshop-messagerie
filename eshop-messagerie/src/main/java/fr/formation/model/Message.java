@@ -1,5 +1,6 @@
 package fr.formation.model;
 
+
 import java.time.LocalDateTime;
 
 public class Message {
